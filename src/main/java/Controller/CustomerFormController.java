@@ -4,6 +4,7 @@ import Dto.Customer;
 import Service.ServiceFactory;
 import Service.custom.CustomService;
 import Utill.ServiceType;
+import jakarta.inject.Inject;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -55,7 +56,11 @@ public class CustomerFormController {
     @FXML
     private TextField txtSalary;
 
-    CustomService customService = ServiceFactory.getInstance().getServiceType(ServiceType.CUSTOMER);
+//    CustomService customService = ServiceFactory.getInstance().getServiceType(ServiceType.CUSTOMER);
+
+
+    @Inject
+    CustomService customService;
 
     @FXML
     void btnOnActionAddCustomer(ActionEvent event) {
